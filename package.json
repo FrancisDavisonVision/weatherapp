@@ -1,0 +1,25 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "Falmouth Weather - Vision IFP",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static HTML project - no build step required'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FrancisDavisonVision/weatherapp"
+  },
+  "keywords": [
+    "weather",
+    "vercel",
+    "met-office"
+  ],
+  "author": "Francis Davison",
+  "license": "MIT"
+}
