@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file:///C:/Users/francisdavison/Downloads/holding-screen.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Please Wait</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #0a1628;
+    color: #fff;
+  }
+  body {
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #0a1628 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .container {
+    padding: 4vh 6vw;
+  }
+  h1 {
+    font-size: 8vw;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-bottom: 3vh;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+  }
+  p {
+    font-size: 2.5vw;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeIn 1.5s ease 0.5s forwards;
+    color: #cfd9e4;
+    margin-bottom: 5vh;
+  }
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 1.5vw;
+    opacity: 0;
+    animation: fadeIn 1.5s ease 1s forwards;
+  }
+  .dot {
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 50%;
+    background: #4a9eff;
+    animation: pulse 1.4s infinite ease-in-out;
+  }
+  .dot:nth-child(2) { animation-delay: 0.2s; }
+  .dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes pulse {
+    0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+    40% { transform: scale(1); opacity: 1; }
+  }
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  .time {
+    position: absolute;
+    bottom: 4vh;
+    right: 4vw;
+    font-size: 1.8vw;
+    color: #8aa5c4;
+    font-weight: 300;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>We'll Be Right Back</h1>
+    <p>Thank you for your patience</p>
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+  <div class="time" id="clock">10:21</div>
+<script>
+  function updateClock() {
+    const now = new Date();
+    const h = now.getHours().toString().padStart(2, '0');
+    const m = now.getMinutes().toString().padStart(2, '0');
+    document.getElementById('clock').textContent = h + ':' + m;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
+
+
+</body></html>
